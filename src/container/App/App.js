@@ -8,8 +8,10 @@ import {
   StyledExploerButton,
   StyledSignInButton
 } from './App.Styled';
-import About from '../About/About';
-import Recipes from '../Recipes/Recipes';
+import About from '../About';
+import Recipes from '../Recipes';
+import Cooking from '../Cooking';
+import Dinner from '../Dinner';
 
 function App() {
   // const [isSignInClick, setSignInClick] = React.useState(false)
@@ -26,7 +28,7 @@ function App() {
       <StyledAppHeaderNavigationBar>
         <div>
           <a href='/'>
-          <img src={Logo} />
+            <img src={Logo} />
           </a>
         </div>
         <div className='navigation-list'>
@@ -37,8 +39,8 @@ function App() {
           <div className='navigation'>
             <ul>
               <li><a href='/recipes'>Recipes</a></li>
-              <li>Dinner TV</li>
-              <li>Cooking School</li>
+              <li><a href="/dinner">Dinner TV</a></li>
+              <li><a href="/cooking">Cooking School</a></li>
               <li><a href='/about'>About</a></li>
             </ul>
           </div>
@@ -59,10 +61,16 @@ function App() {
           </React.Fragment>
         }
         {
-          pathname === '/about' && <About></About>
+          pathname === '/about' && <About />
         }
         {
-          pathname === '/recipes' && <Recipes></Recipes>
+          pathname === '/recipes' && <Recipes />
+        }
+        {
+          pathname === '/cooking' && <Cooking />
+        }
+        {
+          pathname === '/dinner' && <Dinner />
         }
       </StyledAppHeaderContent>
     </StyledAppHeader>
